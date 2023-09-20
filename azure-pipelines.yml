@@ -108,7 +108,7 @@ stages:
       vmImage: 'mylinuxagent'
     environment: staging
     variables:
-    - group: 'Release'
+    - group: Release
     strategy:
       runOnce:
         deploy:
@@ -120,6 +120,6 @@ stages:
             inputs:
               azureSubscription: 'Main'
               appType: 'webAppLinux'
-              appName: '$(WebAppNameDev)'
+              appName: '$(WebAppNameStaging)'
               package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
 
